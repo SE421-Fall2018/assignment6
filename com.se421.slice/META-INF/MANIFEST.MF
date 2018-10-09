@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Slicing Toolbox
+Bundle-SymbolicName: com.se421.slice;singleton:=true
+Bundle-Version: 3.3.7.qualifier
+Bundle-Vendor: SE421
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ com.ensoftcorp.atlas.core;bundle-version="3.3.6",
+ com.ensoftcorp.atlas.ui;bundle-version="3.3.6",
+ com.ensoftcorp.atlas.ui.shell;bundle-version="3.3.6"
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Activator: com.se421.slice.Activator
+Export-Package: com.se421.slice.analysis;
+  uses:="com.ensoftcorp.atlas.core.db.set,
+   com.ensoftcorp.atlas.core.query,
+   com.ensoftcorp.atlas.core.highlight,
+   com.ensoftcorp.atlas.core.db.graph,
+   com.ensoftcorp.atlas.core.markup",
+ com.se421.slice.analysis.utilities,
+ com.se421.slice.analysis.utilities.dominance
+Automatic-Module-Name: com.ensoftcorp.open.slice

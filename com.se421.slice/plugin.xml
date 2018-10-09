@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <!-- create an initializer extension to initialize preferences -->
+   <extension
+      point="org.eclipse.equinox.preferences.preferences">
+	   <initializer
+	         class="com.se421.slice.preferences.SlicePreferences">
+	   </initializer>
+   </extension>
+
+   <!-- adds a post code map hook for running slicing analysis automatically -->
+   <extension
+         point="com.ensoftcorp.atlas.core.ToolboxExtensionPoint">
+      <indexer
+            class="com.se421.slice.codemap.PDGCodemapStage">
+      </indexer>
+   </extension>
+
+    <!-- add smart views definitons -->
+   <extension point="com.ensoftcorp.atlas.ui.smartViewScript">
+      <!-- dominance smart views -->
+      <script class="com.se421.slice.ui.smart.ControlFlowDominanceFrontierSmartView" />
+      <script class="com.se421.slice.ui.smart.ControlFlowDominanceTreeSmartView" />
+      <script class="com.se421.slice.ui.smart.ControlFlowPostDominanceFrontierSmartView" />
+      <script class="com.se421.slice.ui.smart.ControlFlowPostDominanceTreeSmartView" />
+      
+      <!-- slicing smart views -->
+      <script class="com.se421.slice.ui.smart.ControlDependenceSliceSmartView"></script>
+      <script class="com.se421.slice.ui.smart.DataDependenceSliceSmartView"></script>
+      <script class="com.se421.slice.ui.smart.ProgramDependenceSliceSmartView"></script>
+   </extension>
+
+</plugin>
